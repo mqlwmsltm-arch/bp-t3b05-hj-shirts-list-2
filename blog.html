@@ -1,389 +1,152 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="합정 셔츠룸 첫 방문을 앞둔 브로를 위한 필수 가이드. 분위기, 가격, 예약 꿀팁까지 브로가 직접 경험하고 정리했다. 010-6279-0862로 예약 문의 고고.">
-    <meta name="keywords" content="합정 셔츠룸, 합정 셔츠룸 모음, 합정 셔츠룸 추천, 합정 셔츠룸 가격, 합정룸, 합정 셔츠룸 블로그">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <meta name="author" content="bro">
-    <link rel="canonical" href="https://hapjeong-shirt-trend.node-link.shop/blog.html">
-    <meta property="og:title" content="합정 셔츠룸 첫 방문? 브로가 알려주는 필수 꿀팁 5가지">
-    <meta property="og:description" content="진짜 가봐야 할 합정 셔츠룸만 골라서 경험담과 함께 공개. 분위기, 가격, 위치 꿀팁 대방출. 전화 010-6279-0862">
-    <meta property="og:image" content="https://picsum.photos/seed/shirtsblog/1200/630">
-    <meta property="og:url" content="https://hapjeong-shirt-trend.node-link.shop/blog.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>블로그 | 합정 셔츠룸 모음</title>
-    <style>
-        /* ----- RESET & BASE ----- */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            font-size: 100%;
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-        }
-        body {
-            background: #0b0b0b;
-            color: #e0e0e0;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        img, svg {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        a {
-            color: #facc15;
-            text-decoration: none;
-            transition: color .2s;
-        }
-        a:hover {
-            color: #ffdd44;
-            text-decoration: underline wavy #facc15 2px;
-        }
-        /* ----- SPACE: airy ----- */
-        :root {
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 3.5rem;
-            --space-xl: 5rem;
-            --max-width: 1200px;
-            --gutter: 1.5rem;
-        }
-        /* ----- TYPOGRAPHY ----- */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #f5f5f5;
-        }
-        h1 {
-            font-size: clamp(2.4rem, 6vw, 4rem);
-            text-transform: uppercase;
-            border-left: 8px solid #facc15;
-            padding-left: var(--space-sm);
-        }
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin-bottom: var(--space-sm);
-            display: inline-block;
-            border-bottom: 4px solid #facc15;
-            padding-bottom: 0.25rem;
-        }
-        h3 {
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            margin-bottom: var(--space-xs);
-        }
-        p, li, blockquote {
-            font-size: 1.125rem;
-            max-width: 70ch;
-            color: #c0c0c0;
-        }
-        /* ----- BRUTALIST ELEMENT ----- */
-        .brutal-card {
-            background: #1a1a1a;
-            border: 3px solid #2a2a2a;
-            padding: var(--space-md);
-            box-shadow: 8px 8px 0 #000;
-            transition: transform .15s, box-shadow .15s;
-        }
-        .brutal-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0 #facc15;
-        }
-        .brutal-btn {
-            display: inline-block;
-            background: #facc15;
-            color: #0b0b0b;
-            font-weight: bold;
-            padding: 0.8rem 2rem;
-            border: none;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 6px 6px 0 #7a6f0e;
-            transition: .15s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .brutal-btn:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0 #7a6f0e;
-            text-decoration: none;
-            color: #0b0b0b;
-        }
-        /* ----- LAYOUT ----- */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-            width: 100%;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-md);
-        }
-        /* ----- HEADER & NAV (hamburger) ----- */
-        .site-header {
-            background: #0f0f0f;
-            border-bottom: 3px solid #2a2a2a;
-            padding: var(--space-sm) 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .logo a {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #facc15;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-        }
-        .logo a:hover {
-            text-decoration: none;
-            color: #ffdd44;
-        }
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: 2px solid #facc15;
-            color: #facc15;
-            font-size: 2rem;
-            padding: 0.2rem 0.8rem;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .nav-menu {
-            display: flex;
-            gap: var(--space-md);
-            list-style: none;
-            align-items: center;
-        }
-        .nav-menu a {
-            color: #ccc;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            padding: 0.4rem 0;
-            border-bottom: 2px solid transparent;
-        }
-        .nav-menu a:hover {
-            color: #facc15;
-            border-bottom-color: #facc15;
-            text-decoration: none;
-        }
-        .tel-link {
-            background: #facc15;
-            color: #0b0b0b !important;
-            padding: 0.5rem 1.2rem !important;
-            font-weight: 700;
-            border-radius: 0;
-            box-shadow: 4px 4px 0 #7a6f0e;
-            transition: .15s;
-        }
-        .tel-link:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 #7a6f0e;
-            color: #0b0b0b !important;
-            border-bottom: none !important;
-        }
-        /* ----- HERO / BLOG HEADER ----- */
-        .blog-hero {
-            padding: var(--space-xl) 0 var(--space-lg);
-            background: linear-gradient(145deg, #0d0d0d 0%, #161616 100%);
-            border-bottom: 4px solid #facc15;
-        }
-        .blog-hero .container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-        .blog-hero .meta {
-            display: flex;
-            gap: var(--space-sm);
-            font-size: 0.9rem;
-            color: #888;
-            text-transform: uppercase;
-        }
-        .blog-hero p {
-            font-size: 1.2rem;
-            max-width: 65ch;
-        }
-        /* ----- BLOG CONTENT (article) ----- */
-        .blog-article {
-            padding: var(--space-xl) 0;
-            flex: 1;
-        }
-        .article-body {
-            background: #141414;
-            border: 2px solid #2a2a2a;
-            padding: var(--space-md) var(--space-lg);
-            box-shadow: 8px 8px 0 #000;
-        }
-        .article-body h3 {
-            margin-top: var(--space-md);
-            border-left: 4px solid #facc15;
-            padding-left: var(--space-sm);
-        }
-        .article-body p {
-            margin: var(--space-sm) 0;
-        }
-        .article-body ul {
-            margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
-            list-style: square;
-            color: #c0c0c0;
-        }
-        .article-body blockquote {
-            border-left: 6px solid #facc15;
-            padding-left: var(--space-sm);
-            background: #1e1e1e;
-            padding: var(--space-sm);
-            font-style: italic;
-            margin: var(--space-md) 0;
-        }
-        .article-body .highlight-box {
-            background: #1d1d1d;
-            border: 2px dashed #facc15;
-            padding: var(--space-md);
-            margin: var(--space-md) 0;
-        }
-        /* ----- FAQ (reuse same class) ----- */
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-sm);
-            max-width: 800px;
-            margin: var(--space-md) auto;
-        }
-        .faq-item {
-            background: #1a1a1a;
-            border: 2px solid #2a2a2a;
-            padding: var(--space-sm) var(--space-md);
-            box-shadow: 5px 5px 0 #000;
-        }
-        .faq-item summary {
-            font-weight: 700;
-            font-size: 1.15rem;
-            cursor: pointer;
-            color: #facc15;
-            padding: 0.5rem 0;
-        }
-        .faq-item p {
-            margin-top: var(--space-xs);
-        }
-        /* ----- FOOTER ----- */
-        .site-footer {
-            background: #0a0a0a;
-            border-top: 3px solid #2a2a2a;
-            padding: var(--space-md) 0;
-            text-align: center;
-            color: #777;
-            font-size: 0.9rem;
-            margin-top: auto;
-        }
-        .site-footer a {
-            color: #aaa;
-        }
-        /* ----- RESPONSIVE 768 ----- */
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
-            .nav-menu {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                padding: var(--space-sm) 0;
-                gap: var(--space-sm);
-                background: #0f0f0f;
-                border-top: 2px solid #2a2a2a;
-                margin-top: var(--space-sm);
-            }
-            .nav-menu.open {
-                display: flex;
-            }
-            .nav-menu a {
-                font-size: 1.1rem;
-                padding: 0.6rem 0;
-            }
-            .tel-link {
-                text-align: center;
-            }
-            .article-body {
-                padding: var(--space-sm);
-            }
-            .blog-hero h1 {
-                font-size: clamp(1.8rem, 8vw, 2.8rem);
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* ----- HAMBURGER ANIMATION (simple) ----- */
-        .nav-toggle[aria-expanded="true"] {
-            background: #facc15;
-            color: #0b0b0b;
-        }
-        /* ----- extra utilities ----- */
-        .text-center {
-            text-align: center;
-        }
-        .mt-lg {
-            margin-top: var(--space-lg);
-        }
-        .mb-md {
-            margin-bottom: var(--space-md);
-        }
-    </style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>합정 셔츠룸 블로그 – 최신 트렌드와 활용 팁</title>
+  <meta name="description" content="합정에 위치한 셔츠룸을 처음 이용하려는 담당자를 위해 준비 단계별 체크리스트와 상황별 맞춤 선택 기준을 상세히 안내합니다.">
+  <meta name="keywords" content="합정 셔츠룸, 셔츠룸 예약, 합정 셔츠룸 모음, 셔츠룸 준비 가이드">
+  <link rel="canonical" href="https://hapjeong-shirt-trend.node-link.shop/blog.html">
+  <meta property="og:title" content="합정 셔츠룸 모음 — 처음 이용자를 위한 준비 가이드와 선택 기준">
+  <meta property="og:description" content="합정에 위치한 셔츠룸을 처음 이용하려는 담당자를 위해 준비 단계별 체크리스트와 상황별 맞춤 선택 기준을 상세히 안내합니다.">
+  <meta property="og:url" content="https://hapjeong-shirt-trend.node-link.shop/blog.html">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      /* 색상 변수, 타이포그래피 변수 등 기존 디자인 시스템 정의 */
+    }
+    *{
+      box-sizing:border-box;
+    }
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:#f9f9f9;
+      color:#333;
+    }
+    .k-txt-tdip{
+      /* 기존 텍스트 스타일 */
+    }
+    .r-txt-reio{
+      /* 기존 텍스트 스타일 */
+    }
+    .r-txt-reio ul{
+      list-style:none;
+      padding:0;
+    }
+    .r-txt-reio a{
+      color:#0066ff;
+      text-decoration:none;
+    }
+    .r-body-xfsq{
+      line-height:1.6;
+      margin-bottom:1.5rem;
+    }
+    .r-body-xfsq div{
+      margin-top:1rem;
+    }
+    .m-box-pgwl{
+      max-width:1200px;
+      margin:auto;
+      padding:2rem;
+    }
+    .m-box-pgwl h1{
+      font-size:2.5rem;
+      margin-bottom:1rem;
+      position:relative;
+    }
+    .m-box-pgwl h1::first-letter{
+      color:#ff6600;
+      font-size:3rem;
+    }
+    .t-main-jv97{
+      margin-top:2rem;
+    }
+    .x-top-j9e0{
+      background:#fff;
+      padding:1.5rem;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    @media (max-width:768px){
+      .m-box-pgwl{
+        padding:1rem;
+      }
+      .m-box-pgwl h1{
+        font-size:2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="/" title="합정 셔츠룸 모음">BRO PICK</a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" title="홈">홈</a></li>
-                    <li><a href="/list" title="리스트">리스트</a></li>
-                    <li><a href="/blog" title="블로그" style="color:#facc15;border-bottom:2px solid #facc15;">블로그</a></li>
-                    <li><a href="/faq" title="FAQ">FAQ</a></li>
-                    <li><a href="tel:010-6279-0862" class="tel-link" title="전화 예약">📞 010-6279-0862</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <nav class="nav-present">
+    <ul>
+      <li><a href="/index.html">홈</a></li>
+      <li><a href="/list.html">모음</a></li>
+      <li><a href="/blog.html">블로그</a></li>
+      <li><a href="/contact.html">문의</a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <section class="blog-hero">
-            <div class="container">
-                <div class="meta">
-                    <span>📅 2025.04.12</span>
-                    <span>✍️ bro</span>
-                    <span>🏷️ 합정 셔츠룸 꿀팁</span>
-                </div>
-                <h1>합정 셔츠룸 첫 방문?<br>브로가 알려주는 필수 꿀팁 5가지</h1>
-                <p>처음 가는 셔츠룸, 막상 문 앞에서 망설여진 적 있지? 브로도 그랬어. 그래서 내가 직접 부딪히고 느낀 점들을 모아왔어. 분위기, 가격, 예약 노하우까지 — 진짜 도움 되는 얘기만
+  <div class="m-box-pgwl">
+    <h1>합정 셔츠룸 블로그</h1>
+  </div>
+
+  <section class="t-main-jv97 x-top-j9e0">
+    <div class="r-body-xfsq">
+      <h2>1. 셔츠룸을 선택할 때 고려해야 할 기본 요소</h2>
+      <p>합정 지역은 다양한 스타일의 셔츠룸이 밀집해 있어 선택의 폭이 넓습니다. 하지만 처음 방문한다면 공간 규모, 예약 가능 시간, 그리고 제공되는 기본 장비(조명, 거울, 의자 등)를 먼저 확인하는 것이 좋습니다. 일반적인 스튜디오와 달리 셔츠룸은 촬영 목적에 맞게 특화된 조명 설계가 돋보이므로, 조명 종류와 밝기 조절 여부를 체크해 보세요.</p>
+      <p>또한, 셔츠룸 운영 시간과 휴무일을 미리 파악해 일정 충돌을 방지하는 것이 중요합니다. 특히 주말이나 저녁 시간대는 예약이 빨리 차기 때문에, 사전에 온라인 캘린더를 활용하거나 전화로 확인하는 습관을 들이면 원활한 촬영 진행이 가능합니다.</p>
+    </div>
+  </section>
+
+  <section class="t-main-jv97 x-top-j9e0">
+    <div class="r-body-xfsq">
+      <h2>2. 인원 규모별 최적 셔츠룸 활용 가이드</h2>
+      <p>작은 규모(1~2인)의 촬영이라면 소형 셔츠룸이 경제적이며, 이동식 배경과 간단한 조명을 활용해 빠르게 셋업할 수 있습니다. 반면, 3~5인 팀이면 중형 공간을 선택해 충분한 움직임 공간을 확보하고, 멀티 라이트 키트를 추가하면 더욱 풍부한 분위기를 연출할 수 있습니다.</p>
+      <p>6인 이상 대규모 팀이 함께 촬영할 경우, 넓은 전용 셔츠룸을 예약해 여러 세트와 소품을 동시에 배치하는 것이 효율적입니다. 이때는 전력량 제한과 소음 방지 정책을 미리 확인해 현장에서 불필요한 제약을 피하세요.</p>
+    </div>
+  </section>
+
+  <section class="t-main-jv97 x-top-j9e0">
+    <div class="r-body-xfsq">
+      <h2>3. 촬영 목적에 따른 셔츠룸 선택 포인트</h2>
+      <p>제품 촬영(의류, 액세서리 등)이라면 배경 색상과 조명의 색온도 조절이 가능한 공간이 필요합니다. 특히 색감이 중요한 패션 아이템은 백색광을 기본으로 하면서, 필요에 따라 톤 다운된 조명을 추가해 색상 왜곡을 최소화할 수 있습니다.</p>
+      <p>인물 포트레이트 촬영은 부드러운 확산 조명이 핵심이므로, 셔츠룸에 부착된 소프트박스나 디퓨저 유무를 확인하세요. 또한, 자연광을 활용하고 싶다면 대형 창문이 있는 셔츠룸을 선택해 시간대별 빛의 변화를 활용하는 것이 좋습니다.</p>
+    </div>
+  </section>
+
+  <section class="t-main-jv97 x-top-j9e0">
+    <div class="r-body-xfsq">
+      <h2>4. 예약 전 체크리스트 – 필수 확인 항목</h2>
+      <p>① 예약 가능 시간대와 최소 이용 시간<br>
+         ② 기본 제공 장비(조명, 배경, 의자 등) 목록<br>
+         ③ 추가 장비 대여 비용 및 절차<br>
+         ④ 현장 내 흡연·음식·음료 정책</p>
+      <p>⑤ 결제 방식(선불·후불) 및 취소 정책<br>
+         ⑥ 현장 담당자 연락처와 비상시 대응 방안<br>
+         ⑦ 주차 가능 여부와 주변 교통 편의성</p>
+    </div>
+  </section>
+
+  <section class="t-main-jv97 x-top-j9e0">
+    <div class="r-body-xfsq">
+      <h2>FAQ</h2>
+      <div class="r-txt-reio">
+        <ul>
+          <li><strong>Q: 촬영 후 장비 반납은 어떻게 하나요?</strong><br>
+          A: 대부분의 셔츠룸은 사용 종료 후 담당자에게 직접 반납하면 됩니다. 반납 시간은 예약 시 확인하고, 연장할 경우 추가 요금이 발생할 수 있습니다.</li>
+          <li><strong>Q: 외부 모델을 데려와도 되나요?</strong><br>
+          A: 원칙적으로 외부 인원을 데려올 수 있지만, 사전에 담당자와 인원 수와 이동 경로를 협의하는 것이 안전합니다.</li>
+          <li><strong>Q: 촬영 중 조명 색온도를 바꿀 수 있나요?</strong><br>
+          A: 대부분의 셔츠룸은 색온도 조절이 가능한 LED 조명을 구비하고 있어, 현장에서 바로 변환이 가능합니다. 다만, 일부 구형 장비는 별도 요청이 필요합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="r-txt-reio">
+    <p>© 2026 합정 셔츠룸 가이드. All rights reserved.</p>
+  </footer>
 </body>
 </html>
