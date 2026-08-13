@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b05-hj-shirts-list-2</title>
+  <meta name="description" content="t3b05-hj-shirts-list-2에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hapjeong-shirt-trend.node-link.shop/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+/* ----- RESET & BASE ----- */
+*, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+}
+
+body {
+ background-color: #000000;
+ color: #ffffff;
+ font-family: Impact, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+ line-height: 1.2;
+ min-height: 100vh;
+}
+
+img, svg {
+ display: block;
+ max-width: 100%;
+}
+
+a {
+ color: #ff3b00;
+ text-decoration: none;
+}
+
+a:hover {
+ text-decoration: underline;
+ text-underline-offset: 4px;
+}
+
+/* ----- SPACE: airy ----- */
+:root {
+ --gap: 48px;
+ --padding: 72px;
+ --section-gap: 120px;
+}
+
+/* ----- TYPOGRAPHY ----- */
+h1, h2, h3, h4 {
+ font-weight: 400;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+}
+
+h1 {
+ font-size: clamp(3rem, 10vw, 6rem);
+ line-height: 0.9;
+ color: #ffffff;
+ word-break: break-word;
+}
+
+h2 {
+ font-size: clamp(2.2rem, 7vw, 4rem);
+ line-height: 1;
+ margin-bottom: 0.5em;
+}
+
+p, li, blockquote {
+ font-family: system-ui, -apple-system, sans-serif;
+ font-size: 1.1rem;
+ line-height: 1.5;
+}
+
+/* ----- BRUTALIST ELEMENTS ----- */
+.brutal-border {
+ border: 4px solid #ffffff;
+ outline: 2px solid #ff3b00;
+ outline-offset: -8px;
+}
+
+.brutal-skew {
+ transform: skew(-2deg);
+}
+
+.brutal-bg {
+ background-color: #111111;
+ background-image: repeating-linear-gradient(45deg, rgba(255,59,0,0.05) 0px, rgba(255,59,0,0.05) 4px, transparent 4px, transparent 12px);
+}
+
+.accent-text {
+ color: #ff3b00;
+}
+
+.big-number {
+ font-size: 4rem;
+ line-height: 1;
+ color: #ff3b00;
+}
+
+/* ----- HEADER / NAV ----- */
+header {
+ position: relative;
+ z-index: 100;
+ padding: var(--padding) var(--padding) 0;
+ background-color: #000000;
+ border-bottom: 4px solid #ff3b00;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: var(--gap);
+}
+
+header .site-title {
+ font-size: 1.8rem;
+ color: #ffffff;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+}
+
+header .site-title span {
+ color: #ff3b00;
+ font-size: 2.4rem;
+}
+
+nav {
+ display: flex;
+ gap: 36px;
+ align-items: center;
+}
+
+nav a {
+ font-size: 1.2rem;
+ text-transform: uppercase;
+ color: #ffffff;
+ border: 3px solid transparent;
+ padding: 4px 8px;
+ transition: 0.15s;
+}
+
+nav a:hover {
+ border-color: #ff3b00;
+ color: #ff3b00;
+ text-decoration: none;
+}
+
+.cta-phone {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ background-color: #ff3b00;
+ color: #000000 !important;
+ padding: 8px 20px !important;
+ font-size: 1.2rem;
+ font-weight: 700;
+ border: 4px solid #ffffff !important;
+ text-decoration: none !important;
+ transition: 0.2s;
+}
+
+.cta-phone:hover {
+ background-color: #ffffff;
+ border-color: #ff3b00 !important;
+ color: #000000 !important;
+}
+
+/* 햄버거 메뉴 */
+.hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 6px;
+ background: none;
+ border: none;
+ cursor: pointer;
+ padding: 8px;
+}
+
+.hamburger span {
+ display: block;
+ width: 32px;
+ height: 4px;
+ background-color: #ffffff;
+ transition: 0.3s;
+}
+
+.mobile-overlay {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: #000000;
+ z-index: 99;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 48px;
+ padding: var(--padding);
+}
+
+.mobile-overlay.open {
+ display: flex;
+}
+
+.mobile-overlay a {
+ font-size: 2rem;
+ color: #ffffff;
+ text-transform: uppercase;
+ border-bottom: 3px solid transparent;
+}
+
+.mobile-overlay a:hover {
+ border-bottom-color: #ff3b00;
+}
+
+.mobile-overlay .close-btn {
+ position: absolute;
+ top: 32px;
+ right: 32px;
+ background: none;
+ border: 4px solid #ffffff;
+ color: #ffffff;
+ font-size: 2.4rem;
+ padding: 8px 20px;
+ cursor: pointer;
+}
+
+/* ----- HERO ----- */
+.hero {
+ padding: var(--padding);
+ padding-top: calc(var(--padding) + 48px);
+ padding-bottom: var(--padding);
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--gap);
+ align-items: center;
+ position: relative;
+ overflow: hidden;
+ background-color: #000000;
+ border-bottom: 4px solid #ffffff;
+}
+
+.hero::before {
+ content: '';
+ position: absolute;
+ top: -20%;
+ right: -10%;
+ width: 60%;
+ height: 140%;
+ background: repeating-linear-gradient(45deg, #ff3b00 0px, #ff3b00 6px, transparent 6px, transparent 18px);
+ opacity: 0.15;
+ z-index: 0;
+}
+
+.hero-content {
+ position: relative;
+ z-index: 1;
+}
+
+.hero-content h1 {
+ margin-bottom: 0.3em;
+ text-shadow: 8px 8px 0 #ff3b00;
+}
+
+.hero-content p {
+ font-size: 1.4rem;
+ color: #cccccc;
+ margin-bottom: var(--gap);
+ max-width: 80%;
+}
+
+.hero-content .cta-group {
+ display: flex;
+ gap: 24px;
+ flex-wrap: wrap;
+}
+
+.hero-visual {
+ position: relative;
+ z-index: 1;
+ width: 100%;
+ height: 100%;
+ min-height: 320px;
+ background-color: #111111;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+}
+
+.hero-visual svg {
+ width: 100%;
+ height: auto;
+ max-height: 400px;
+}
+
+/* ----- SECTIONS (global) ----- */
+section {
+ padding: calc(var(--section-gap) / 2) var(--padding);
+}
+
+.section-header {
+ margin-bottom: var(--gap);
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+}
+
+.section-header h2 {
+ border-left: 8px solid #ff3b00;
+ padding-left: 24px;
+}
+
+/* ----- INTRO / ABOUT ----- */
+.intro-section {
+ padding-top: var(--padding);
+ padding-bottom: var(--padding);
+ background-color: #0a0a0a;
+ border-top: 4px solid #ff3b00;
+ border-bottom: 4px solid #ff3b00;
+}
+
+.intro-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--gap);
+}
+
+.intro-grid p {
+ font-size: 1.2rem;
+ color: #dddddd;
+}
+
+.highlight-box {
+ background-color: #111111;
+ border: 4px solid #ff3b00;
+ padding: 32px;
+ transform: skew(-3deg);
+ margin-top: var(--gap);
+}
+
+.highlight-box p {
+ font-size: 1.6rem;
+ color: #ffffff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ transform: skew(3deg);
+}
+
+/* ----- PLACES (셔츠룸 리스트) ----- */
+.places-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+ gap: var(--gap);
+ margin-top: var(--gap);
+}
+
+.place-card {
+ background-color: #111111;
+ border: 4px solid #ffffff;
+ padding: 32px;
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+ transition: 0.2s;
+ position: relative;
+}
+
+.place-card:hover {
+ border-color: #ff3b00;
+ transform: translateY(-8px);
+}
+
+.place-card .place-number {
+ font-size: 3rem;
+ color: #ff3b00;
+ line-height: 1;
+ margin-bottom: 4px;
+}
+
+.place-card h3 {
+ font-size: 1.8rem;
+ color: #ffffff;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+}
+
+.place-card .meta {
+ display: flex;
+ gap: 16px;
+ font-family: system-ui, sans-serif;
+ color: #aaaaaa;
+ font-size: 0.95rem;
+ border-top: 2px solid #333;
+ padding-top: 12px;
+}
+
+.place-card .meta span {
+ display: flex;
+ align-items: center;
+ gap: 6px;
+}
+
+.place-card p {
+ color: #cccccc;
+ font-size: 1rem;
+}
+
+/* ----- UGC REVIEWS ----- */
+.reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: var(--gap);
+ margin-top: var(--gap);
+}
+
+.review-card {
+ background-color: #0d0d0d;
+ border: 4px solid #ffffff;
+ padding: 32px;
+ display: flex;
+ flex-direction: column;
+ gap: 16px;
+ position: relative;
+}
+
+.review-card::before {
+ content: '“';
+ font-size: 4rem;
+ color: #ff3b00;
+ position: absolute;
+ top: -8px;
+ left: 12px;
+ line-height: 1;
+ opacity: 0.6;
+}
+
+.review-card .stars {
+ color: #ff3b00;
+ font-size: 1.4rem;
+ letter-spacing: 4px;
+}
+
+.review-card blockquote {
+ font-size: 1.1rem;
+ color: #dddddd;
+ font-style: italic;
+ padding-top: 8px;
+}
+
+.review-card .reviewer {
+ display: flex;
+ justify-content: space-between;
+ font-size: 0.9rem;
+ color: #888888;
+ border-top: 2px solid #333;
+ padding-top: 12px;
+ font-family: system-ui, sans-serif;
+}
+
+/* ----- CTA SECTION ----- */
+.cta-section {
+ background-color: #000000;
+ border-top: 4px solid #ff3b00;
+ border-bottom: 4px solid #ffffff;
+ text-align: center;
+}
+
+.cta-section h2 {
+ font-size: clamp(2.5rem, 8vw, 5rem);
+ color: #ffffff;
+ text-shadow: 6px 6px 0 #ff3b00;
+ margin-bottom: 24px;
+}
+
+.cta-section .big-phone {
+ display: inline-block;
+ background-color: #ff3b00;
+ color: #000000 !important;
+ padding: 24px 64px;
+ font-size: 2.4rem;
+ font-weight: 700;
+ border: 6px solid #ffffff;
+ margin-top: 24px;
+ transition: 0.2s;
+ text-decoration: none !important;
+}
+
+.cta-section .big-phone:hover {
+ background-color: #ffffff;
+ border-color: #ff3b00;
+ color: #000000 !important;
+}
+
+/* ----- FOOTER ----- */
+footer {
+ padding: var(--padding);
+ background-color: #000000;
+ border-top: 4px solid #ff3b00;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ gap: var(--gap);
+ font-size: 0.9rem;
+ color: #888888;
+ font-family: system-ui, sans-serif;
+}
+
+footer a {
+ color: #aaaaaa;
+}
+
+footer a:hover {
+ color: #ff3b00;
+}
+
+/* ----- 반응형 ----- */
+@media (max-width: 768px) {
+ :root {
+ --padding: 32px;
+ --gap: 32px;
+ --section-gap: 80px;
+ }
+
+ header {
+ padding: var(--padding);
+ gap: 16px;
+ }
+
+ header .site-title {
+ font-size: 1.4rem;
+ }
+
+ nav {
+ display: none;
+ }
+
+ .hamburger {
+ display: flex;
+ }
+
+ .hero {
+ grid-template-columns: 1fr;
+ padding: var(--padding);
+ padding-top: calc(var(--padding) + 24px);
+ }
+
+ .hero-content p {
+ max-width: 100%;
+ }
+
+ .hero-visual {
+ min-height: 200px;
+ }
+
+ .intro-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .places-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .reviews-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .cta-section .big-phone {
+ font-size: 1.6rem;
+ padding: 16px 40px;
+ }
+
+ footer {
+ flex-direction: column;
+ text-align: center;
+ gap: 16px;
+ }
+
+ section {
+ padding: calc(var(--section-gap) / 2) var(--padding);
+ }
+
+ .highlight-box {
+ transform: none;
+ }
+
+ .highlight-box p {
+ transform: none;
+ }
+}
+
+/* ----- UTILITY ----- */
+.text-center {
+ text-align: center;
+}
+
+.mt-gap {
+ margin-top: var(--gap);
+}
+</style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b05-hj-shirts-list-2">
+  <meta property="og:description" content="t3b05-hj-shirts-list-2에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hapjeong-shirt-trend.node-link.shop/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="site-title">
+ <span>👕</span> 합정 셔츠룸 <span>모음</span>
+ </div>
+ <nav>
+ <a href="#places">리스트</a>
+ <a href="#reviews">후기</a>
+ 
+ </nav>
+ <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴 열기">
+ 
+ </button>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 39개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0288.html">합정 셔츠룸 모음 활용 가이드와 마곡 가라오케 추천정보 체크리스트</a>
+        <p class="post-item__summary">합정 셔츠룸 모음 정보에서 마곡 지역으로 범위를 넓히는 이용자들이 늘고 있습니다. 마곡 가라오케 선택 시 가장 중요한 체크리스트는 시설의 위치와 대중교통 접근성입니다. 차량을 이용하는지 혹은 대중교</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0289.html">합정 셔츠룸 모음 활용하여 찾아보는 마곡 유흥 추천정보 가이드</a>
+        <p class="post-item__summary">낯선 지역에서 즐거운 시간을 보내고자 계획을 세우다 보면 가장 먼저 고민되는 것이 바로 정보의 불균형입니다. 특히 합정 셔츠룸 모음 같은 자료를 참고하려 해도 막상 다른 지역인 마곡으로 이동하면 어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0290.html">합정 셔츠룸 모음 정보를 넘어 완성하는 합정 노래방 추천정보 팁</a>
+        <p class="post-item__summary">많은 이들이 유흥 시설을 방문할 때 무조건 늦은 밤이 가장 좋다고 생각하지만 이는 반은 맞고 반은 틀린 오해입니다. 합정 셔츠룸 모음 같은 정보를 검색하다 보면 시간대별로 서비스의 질이 확연히 다르</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0291.html">합정 셔츠룸 모음 속에서 발견하는 연남 클럽 추천정보 선택법</a>
+        <p class="post-item__summary">음악과 열기가 가득한 밤을 보내기 위해 필요한 것은 적절한 공간 선정과 함께 동행인과의 조화입니다. 합정 셔츠룸 모음 자료를 조사하는 분들이 종종 인근 지역으로 시야를 넓혀 새로운 공간을 탐색하곤 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0292.html">합정 셔츠룸 모음 기준에 따른 합정 셔츠룸 추천정보 비교 가이드</a>
+        <p class="post-item__summary">당신은 오늘 어떤 기준으로 밤의 시간을 보내실 계획인가요. 합정 셔츠룸 모음 리스트를 단순히 나열하는 것만으로는 진정한 가치를 판단하기 어렵다는 사실을 알고 계십니까. 수많은 업체들 사이에서 자신에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0293.html">합정 셔츠룸 모음 활용한 공덕 가라오케 추천정보 분석 가이드</a>
+        <p class="post-item__summary">주변 유흥 문화를 탐색하다 보면 합정 셔츠룸 모음과 같은 다양한 선택지 사이에서 고민하게 됩니다. 특히 지역적 특색이 뚜렷한 곳을 선택할 때는 객관적인 지표를 파악하는 것이 중요합니다. 이번 글에서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0294.html">합정 셔츠룸 모음 비교하고 상수 마사지 추천정보 선택하기</a>
+        <p class="post-item__summary">많은 분이 합정 셔츠룸 모음과 같은 정보 속에서 고민하지만, 신체의 피로를 푸는 마사지 영역은 전혀 다른 접근이 필요합니다. 상수 인근의 힐링 공간을 결정할 때는 저렴한 정액제 방식과 고급스러운 맞</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0295.html">합정 셔츠룸 모음 확인 전 망원 노래방 추천정보 예약 시 주의사항</a>
+        <p class="post-item__summary">즐거운 모임을 계획할 때 합정 셔츠룸 모음과 같은 정보를 찾는 것도 좋지만, 망원 인근의 노래방을 예약할 때 흔히 발생하는 실수를 먼저 방지해야 합니다. 많은 이들이 가장 먼저 실패하는 지점은 운영</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0296.html">합정 셔츠룸 모음 검색보다 홍대 노래방 추천정보 확인 필수 체크리스트</a>
+        <p class="post-item__summary">홍대 일대에서 시간을 보내려 할 때 합정 셔츠룸 모음 같은 정보에만 매몰되기보다는 노래방 선택을 위한 구체적인 체크리스트를 갖추는 것이 유용합니다. 위치와 접근성은 방문자의 만족도를 결정짓는 가장 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0297.html">합정 셔츠룸 모음 활용한 공덕 셔츠룸 추천정보 확인하기</a>
+        <p class="post-item__summary">오랜만에 만난 지인들과 저녁 식사를 마친 후, 색다른 분위기의 장소를 찾는 상황이 종종 발생합니다. 합정 셔츠룸 모음 정보를 살펴보며 동선을 계획하는 분들이라면 인근 지역의 특성을 미리 파악하는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/interview-002-1laeoy6.html">합정 셔츠룸 모음 경험자에게 물어본 현실적인 판단 기준</a>
+        <p class="post-item__summary">합정 인근에서 셔츠룸을 방문하거나 관련 정보를 둘러볼 때 가장 먼저 고려해야 할 점은 서비스의 구체적인 특징과 분위기입니다. 셔츠룸은 일반적인 유흥주점과 달리 특정 콘셉트의 의상과 진행 방식이 정해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">합정 셔츠룸 모음</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸은 다양한 디자인과 스타일을 갖춘 의류 매장들이 모여 있는 특색 있는 상권입니다. 이 지역에서는 캐주얼부터 포멀까지 폭넓은 옵션을 찾을 수 있으며, 트렌디한 의류를 선호하는 사람들</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">합정 셔츠룸 정보</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸은 다양한 매니아층을 보유하고 있으며, 최근에는 단순한 취미 공간을 넘어 커뮤니티 공간으로도 주목받고 있습니다. 셔츠룸은 주로 한정판 셔츠와 고유의 아이템을 수집하고 감상하는 공간</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-1laeoy6.html">합정 셔츠룸 모음</a>
+        <p class="post-item__summary">합정 지역에서 편안하고 친근한 분위기의 유흥 공간을 찾는 분들을 위해 합정 셔츠룸 모음 정보를 소개해 드립니다. 합정역 주변은 교통이 편리하고 다양한 편의시설이 밀집해 있어 저녁 모임이나 스트레스 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">합정 셔츠룸 모음</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸 관련 정보를 종합적으로 정리한 공간입니다. 셔츠룸은 특정 주제와 공간을 기반으로 한 실내 환경을 의미하며, 고객은 해당 지역의 분위기나 내부 스타일에 따라 다양한 선택지를 고려할</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">합정 셔츠룸 안내</a>
+        <p class="post-item__summary">합정 지역의 셔츠룸은 주로 비즈니스 미팅이나 중요한 약속을 앞둔 남성들이 찾는 경향이 있습니다. 이러한 장소는 단순한 의류 대여를 넘어, 단정하고 세련된 외관을 연출할 수 있는 환경을 제공합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">합정 셔츠룸 모음</a>
+        <p class="post-item__summary">합정 지역에는 셔츠룸 관련 정보를 알아보는 이들을 위한 모음 페이지가 마련되어 있습니다. 셔츠룸은 깔끔하고 단정한 옷차림을 중시하는 공간으로, 비즈니스 미팅이나 중요한 행사가 있을 때 방문하는 분들</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001.html">합정 셔츠룸 모음 솔직 후기</a>
+        <p class="post-item__summary">bro, 요즘 합정 셔츠룸 모음에 대해서 말이 많더라. 나도 3개월 동안 써봤는데, 솔직하게 리뷰해 볼게. 먼저, 합정 셔츠룸 모음은 다양한 셔츠룸을 한 곳에서 만나볼 수 있는 곳이야. 여러 셔츠룸</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002-abwsit.html">합정 셔츠룸 모음 솔직 후기</a>
+        <p class="post-item__summary">아, 진짜... 나이키 SB Dunk Low Paris 2003년판과 2021년 레트로판의 스티치 밀도와 박스지 재질 차이가 이 만큼이나 크더군요.</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
